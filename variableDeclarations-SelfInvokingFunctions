@@ -1,0 +1,30 @@
+//topic:self-invoking functions and variable declarations
+
+
+// arrow functions . 
+// 1.self invoking functions. these functions will execute without function call
+// self-invoking function with Arrow function
+(()=>{
+    console.log("self-invoking arrow function");
+})();
+//self-invoking normal function
+(function(){
+    console.log("self invoking normal function");
+})();
+
+//var is function scoped , let is scope scoped {}, const is global scoped
+const constNum=100;
+
+console.log(constNum);
+(function checkConst(){
+    if(true){
+        let letVariable="let is scope variable, cant access outside if scope {} here";
+        window.globalVariable="window is used to declare global variables";
+        console.log(constNum);
+    }
+    // console.log(letVariable);if i access let defined in if scope , i get error
+    
+    console.log(constNum);
+})()
+console.log(globalVariable);
+
